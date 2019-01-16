@@ -170,3 +170,7 @@ label {
 #copyrights p {
   margin-bottom: 5px;
 }
+
+.list-group-item {
+  line-height: 2.5;
+}
