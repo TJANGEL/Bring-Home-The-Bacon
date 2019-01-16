@@ -177,3 +177,11 @@ label {
 .list-group-item {
   line-height: 2.5;
 }
+
+.form-control {
+  border: 1px red solid;
+}
+
+label {
+  color: red;
+}
