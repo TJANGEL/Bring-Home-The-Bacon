@@ -179,9 +179,9 @@ label {
 }
 
 .form-control {
-  border: 1px red solid;
+  border: 1px #cf4a15 solid;
 }
 
 label {
-  color: red;
+  color: #f0ad4e;
 }
