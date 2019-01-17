@@ -123,9 +123,7 @@ hr {
   margin-top: 15px;
 }
 
-/* ==========================================================================
-   NavBar
-   ========================================================================== */
+/* NavBar */
 
 .navbar {
   font-size: 1.2em;
@@ -141,7 +139,7 @@ hr {
 }
 
 #f h3 {
-  color: white;
+  color: #f0ad4e;
   font-size: 28px;
   font-weight: 700;
   letter-spacing: 1px;
@@ -164,6 +162,8 @@ hr {
 
 label {
   color: #f0ad4e !important;
+  font-family: sans-serif;
+  font-weight: 600;
 }
 
 /* ==========================================================================
@@ -190,10 +190,12 @@ label {
   color: #f0ad4e;
 }
 
+/* input form */
+
 .list-group-item {
   line-height: 2.5;
 }
 
 .form-control {
-  border: 1px #cf4a15 solid;
+  border: 2px #cf4a15 solid;
 }
