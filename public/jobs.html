@@ -5,25 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>User's Job List</title>
+    <!-- Favicons -->
+    <link href="img/favicon.png" rel="icon" />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Oswald:400,300,700|EB+Garamond"
+      rel="stylesheet"
+    />
+
     <!-- bootstrap -->
-    <!-- <link
+    <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
       integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
       crossorigin="anonymous"
-    /> -->
-    <!-- bootswatch -->
-    <link
-      rel="stylesheet"
-      href="https://bootswatch.com/4/flatly/bootstrap.min.css"
     />
 
     <!-- CSS file -->
-    <link rel="stylesheet" href="/public/styles/styles.css" />
+    <link rel="stylesheet" href="/public/styles/style.css" />
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-      <a class="navbar-brand" href="#">BHTB</a>
+    <nav class="navbar navbar-expand-lg navbar-success bg-dark">
+      <a class="navbar-brand" href="index.html"><img src="img/logo.png"/></a>
       <button
         class="navbar-toggler"
         type="button"
@@ -37,20 +41,46 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="log-in.html">Login</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="addJob.html">New Job Entry</a>
+          </li>
           <li class="nav-item active">
             <a class="nav-link" href="#"
               >Jobs List <span class="sr-only">(current)</span></a
             >
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/public/addJob.html">New Job Entry</a>
-          </li>
         </ul>
       </div>
     </nav>
-    <div class="container blog">
+    <div class="container">
+      <h4>
+        <a href="addJob.html"
+          ><button type="button" class="submit btn btn-danger mt-5 pl-4 pr-4">
+            Add A Job
+          </button></a
+        >
+      </h4>
       <h1 class="mt-5 mb-5">Jobs List:</h1>
-      <div class="row"><div class="col-md-12 job-container"></div></div>
+      <div class="row job-container">
+        <div class="col-md-3" id="applied"><h3>Applied</h3></div>
+        <div class="col-md-3" id="scheduled-interview">
+          <h3>Scheduled Interview</h3>
+        </div>
+        <div class="col-md-3" id="interviewed"><h3>Interviewed</h3></div>
+        <div class="col-md-3" id="offered"><h3>Offer Received</h3></div>
+      </div>
     </div>
+    <div id="copyrights">
+      <div class="container">
+        <p><span>© Bring Home The Bacon 2019</span></p>
+      </div>
+    </div>
+    <!-- JavaScript Libraries -->
+    <script src="lib/jquery/jquery.min.js"></script>
+    <script src="lib/bootstrap/js/bootstrap.min.js"></script>
   </body>
 </html>
