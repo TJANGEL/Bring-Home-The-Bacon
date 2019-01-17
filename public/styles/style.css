@@ -203,5 +203,21 @@ label {
 /* job list */
 
 .job-container {
-  margin-bottom: 540px;
+  margin-bottom: 530px;
+}
+
+#applied {
+  background: lightgoldenrodyellow;
+}
+
+#scheduled-interview {
+  background: #f0ad4e;
+}
+
+#interviewed {
+  background: lightsalmon;
+}
+
+#offered {
+  background: brown;
 }
