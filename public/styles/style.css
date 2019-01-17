@@ -199,3 +199,9 @@ label {
 .form-control {
   border: 2px #cf4a15 solid;
 }
+
+/* job list */
+
+.job-container {
+  margin-bottom: 540px;
+}
