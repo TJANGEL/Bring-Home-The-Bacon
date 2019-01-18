@@ -26,7 +26,7 @@
     <link rel="stylesheet" href="styles/style.css" />
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-success bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-primary bg-dark">
       <a class="navbar-brand" href="index.html"><img src="img/logo.png"/></a>
       <button
         class="navbar-toggler"
@@ -102,21 +102,41 @@
               id="location"
             />
             <br />
-            <label for="yes_no_radio">Applied:</label>
-            <p><input class="mr-1" type="radio" name="yes_no" /> yes</p>
-            <p><input class="mr-1" type="radio" name="yes_no" checked />no</p>
+            <div class="form-group">
+              <label for="sel1">Applied:</label>
+              <select class="form-control" id="sel1">
+                <option>No Answer</option>
+                <option>YES</option>
+                <option>NO</option>
+              </select>
+            </div>
             <br />
-            <label for="yes_no_radio">Scheduled Interview:</label>
-            <p><input class="mr-1" type="radio" name="yes_no" /> yes</p>
-            <p><input class="mr-1" type="radio" name="yes_no" checked />no</p>
+            <div class="form-group">
+              <label for="sel1">Scheduled Interview:</label>
+              <select class="form-control" id="sel1">
+                <option>No Answer</option>
+                <option>YES</option>
+                <option>NO</option>
+              </select>
+            </div>
             <br />
-            <label for="yes_no_radio">Interviewed:</label>
-            <p><input class="mr-1" type="radio" name="yes_no" /> yes</p>
-            <p><input class="mr-1" type="radio" name="yes_no" checked />no</p>
+            <div class="form-group">
+              <label for="sel1">Interviewed:</label>
+              <select class="form-control" id="sel1">
+                <option>No Answer</option>
+                <option>YES</option>
+                <option>NO</option>
+              </select>
+            </div>
             <br />
-            <label for="yes_no_radio">Offer Received:</label>
-            <p><input class="mr-1" type="radio" name="yes_no" /> yes</p>
-            <p><input class="mr-1" type="radio" name="yes_no" checked />no</p>
+            <div class="form-group">
+              <label for="sel1">Offer Received:</label>
+              <select class="form-control" id="sel1">
+                <option>No Answer</option>
+                <option>YES</option>
+                <option>NO</option>
+              </select>
+            </div>
             <br />
             <label for="comments">Comments:</label>
             <textarea
