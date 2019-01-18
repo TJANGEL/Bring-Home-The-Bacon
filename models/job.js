@@ -7,60 +7,18 @@ module.exports = function(sequelize, DataTypes) {
         len: [1, 35]
       }
     },
-    company: {
+    company_name: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
         len: [1, 25]
       }
     },
-    PoC_firstName: {
+    job_link: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
         len: [1, 25]
-      }
-    },
-    PoC_lastName: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        len: [1, 25]
-      }
-    },
-    PoC_email: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        len: [1, 25]
-      }
-    },
-    country: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        len: [1, 25]
-      }
-    },
-    state: {
-      type: DataTypes.STRING,
-      allowNull: true,
-      validate: {
-        len: [1, 35]
-      }
-    },
-    city: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        len: [1, 25]
-      }
-    },
-    address: {
-      type: DataTypes.STRING,
-      allowNull: true,
-      validate: {
-        len: [1, 45]
       }
     },
     description: {
@@ -69,13 +27,15 @@ module.exports = function(sequelize, DataTypes) {
       validate: {
         len: [1, 180]
       }
-    }    
+    },
+   salary: {
+      type: DataTypes.STRING,
+      allowNull: true,
+      validate: {
+        len: [1, 45]
+      }
+    }
   });
-
-  // Job.associate = function(models) {
-    
-   
-  // };
 
   return Job;
 };
