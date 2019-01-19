@@ -21,6 +21,9 @@ Users can add jobs to the list by filling out a form with detailed information:
     -If they've received an offer
     -Comments about the jobs they want to remember
 
+<!-- Add link to index page -->
+![BHTB](....)
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
