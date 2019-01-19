@@ -1,17 +1,17 @@
 module.exports = function(sequelize, DataTypes) {
   var Job = sequelize.define("Job", {
-    job_title: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        len: [1, 35]
-      }
-    },
     company_name: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
         len: [1, 25]
+      }
+    },
+    job_title: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [1, 35]
       }
     },
     job_link: {
