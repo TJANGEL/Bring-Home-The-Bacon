@@ -11,6 +11,7 @@ var db = require("../models");
 // Routes
 // =============================================================
 module.exports = function(app) {
+
   // GET route for getting all of the job posts
   app.get("/api/Jobs/", function(req, res) {
     db.Job.findAll().then(function(dbJob) {
@@ -22,9 +23,7 @@ module.exports = function(app) {
   app.get("/api/BaconeerInfo/", function(req, res) {
     db.BaconeerInfo.findAll().then(function(dbBaconeerInfo) {
       res.json(dbBaconeerInfo);
-    });
-  });
-
+      
   // Get route for returning posts of a specific category
   app.get("/api/posts/category/:category", function(req, res) {
     db.Post.findAll({
@@ -50,6 +49,7 @@ module.exports = function(app) {
   // POST route for saving a new post
   app.post("/api/posts", function(req, res) {
     console.log(req.body);
+
     db.Job.create({
       company_name: req.body.company_name,
       job_title: req.body.job_title,
@@ -67,10 +67,11 @@ module.exports = function(app) {
     db.BaconeerInfo.create({
       email: req.body.email,
       phoneNumber: req.body.phoneNumber,
-      firstnaeme: req.body.firstName,
+      firstName: req.body.firstName,
       lastName: req.body.lastName
     }).then(function(dbBaconeerInfo) {
       res.json(dbBaconeerInfo);
+
     });
   });
 
