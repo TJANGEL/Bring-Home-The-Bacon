@@ -20,23 +20,10 @@ module.exports = function(sequelize, DataTypes) {
       validate: {
         len: [1, 55]
       }
-    },
-    phoneNumber: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      validate: {
-        len: [1, 11]
-      }
     }
   });
 
-  Baconeer.associate = function(models) {
-    // Associating Author with Posts
-    // When an Author is deleted, also delete any associated Posts
-    Baconeer.hasMany(models.Post, {
-      onDelete: "cascade"
-    });
-  };
+  
 
   return Baconeer;
 };

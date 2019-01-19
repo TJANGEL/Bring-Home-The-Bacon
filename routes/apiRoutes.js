@@ -13,7 +13,7 @@ var db = require("../models");
 module.exports = function(app) {
 
   // GET route for getting all of the job posts
-  app.get("/api/Jobs/", function(req, res) {
+  app.get("/api/Job/", function(req, res) {
     db.Job.findAll().then(function(dbJob) {
       res.json(dbJob);
     });
@@ -23,28 +23,8 @@ module.exports = function(app) {
   app.get("/api/BaconeerInfo/", function(req, res) {
     db.BaconeerInfo.findAll().then(function(dbBaconeerInfo) {
       res.json(dbBaconeerInfo);
-      
-  // Get route for returning posts of a specific category
-  app.get("/api/posts/category/:category", function(req, res) {
-    db.Post.findAll({
-      where: {
-        category: req.params.category
-      }
-    }).then(function(dbPost) {
-      res.json(dbPost);
     });
-  });
-
-  // Get route for retrieving a single post
-  app.get("/api/posts/:id", function(req, res) {
-    db.Post.findOne({
-      where: {
-        id: req.params.id
-      }
-    }).then(function(dbPost) {
-      res.json(dbPost);
-    });
-  });
+  }); 
 
   // POST route for saving a new post
   app.post("/api/posts", function(req, res) {
@@ -75,14 +55,6 @@ module.exports = function(app) {
     });
   });
 
-  // PUT route for updating posts
-  app.put("/api/posts", function(req, res) {
-    db.Post.update(req.body, {
-      where: {
-        id: req.body.id
-      }
-    }).then(function(dbPost) {
-      res.json(dbPost);
-    });
-  });
-};
+  
+}
+
