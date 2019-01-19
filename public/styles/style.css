@@ -127,6 +127,12 @@ hr {
 
 .navbar {
   font-size: 1.2em;
+  font-family: Oswald;
+}
+
+li.active {
+  background: #f2f2f2;
+  border-radius: 2px;
 }
 
 /* Footer Wrap */
