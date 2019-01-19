@@ -1,12 +1,29 @@
 # Bring Home The Bacon
 
-App to help job seekers keep track of jobs they're interested in.
+App to help job-seekers keep track of jobs they've applied to.
 
+If you've been on market for a job, you know how annoying it can be to keep track of jobs you've applied for as well as where in the process you are for each particular app.
 
+With Bring Home The Bacon, users can keep track of jobs they applied for in an organized list that they can keep up to date depending on the status of their application.
+
+Once users log on they are greeted by a list of jobs they have applied for, separated into columns depending on where in the application process they are i.e. applied, interview scheduled, interviewed, offer received.
+
+Users can add jobs to the list by filling out a form with detailed information:
+
+    -company name
+    -Description
+    -Post Link
+    -Salary
+    -Location
+    -If they've applied
+    -If they've scheduled an interview
+    -If they've interviewed
+    -If they've received an offer
+    -Comments about the jobs they want to remember
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
 ### Prerequisites
 
@@ -15,24 +32,6 @@ What things you need to install the software and how to install them
 ```
 Give examples
 ```
-
-### Installing
-
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
 
 ## Running the tests
 
@@ -63,14 +62,9 @@ Click [here](https://secure-woodland-30423.herokuapp.com/) to view heroku deploy
 * [Express.js](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
 * [nodemon](https://nodemon.io/)
 * [Bootstrap](https://getbootstrap.com/) - CSS Framework
-* [express-handlebars](https://www.npmjs.com/package/express-handlebars) -views engine
 * [mysql](https://www.mysql.com/) - database
 * [sequelize](http://docs.sequelizejs.com/) - promise based ORM
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
+* [prettier](https://prettier.io/) - opinionated code formatter
 
 ## Authors
 
