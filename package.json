@@ -1,34 +1,39 @@
 {
-  "name": "project_2",
+  "name": "node-handlebars-boilerplate",
   "version": "1.0.0",
-  "description": "baconation",
+  "description": "Project 2 Starter",
   "main": "server.js",
-  "directories": {
-    "lib": "lib",
-    "test": "test"
-  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "lint": "eslint **/*.js --quiet",
+    "fix": "eslint --fix .",
+    "test": "npm run lint && NODE_ENV=test mocha -u tdd --reporter spec --exit"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/TJANGEL/Project_2.git"
-  },
-  "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/TJANGEL/Project_2/issues"
-  },
-  "homepage": "https://github.com/TJANGEL/Project_2#readme",
   "dependencies": {
-    "dotenv": "^6.2.0",
-    "eslint": "^5.12.0",
-    "express": "^4.16.4",
-    "fs": "0.0.1-security",
-    "mysql": "^2.16.0",
-    "mysql2": "^1.6.4",
-    "path": "^0.12.7",
-    "sequelize": "^4.41.2"
+    "bcrypt": "^3.0.3",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.17.2",
+    "cors": "^2.8.5",
+    "dotenv": "^6.0.0",
+    "express": "^4.16.3",
+    "express-handlebars": "^3.0.0",
+    "express-mysql-session": "^2.1.0",
+    "express-session": "^1.15.6",
+    "jsonwebtoken": "^7.4.2",
+    "mysql": "^2.14.1",
+    "mysql2": "^1.5.3",
+    "passport": "^0.4.0",
+    "sequelize": "^4.38.0",
+    "session": "^0.1.0"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "chai-http": "^4.0.0",
+    "eslint": "^4.19.1",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-prettier": "^2.6.2",
+    "mocha": "^5.2.0",
+    "prettier": "^1.13.7"
   }
 }
