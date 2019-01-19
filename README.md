@@ -21,6 +21,12 @@ Users can add jobs to the list by filling out a form with detailed information:
     -If they've received an offer
     -Comments about the jobs they want to remember
 
+<!-- Add link to index page -->
+![BHTB](https://github.com/TJANGEL/Bring-Home-The-Bacon/blob/master/public/img/logo.png)
+
+![BHTB](https://github.com/TJANGEL/Bring-Home-The-Bacon/blob/master/public/img/BHTB_screenshot.png)
+
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
