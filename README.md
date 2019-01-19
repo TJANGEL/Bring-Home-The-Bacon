@@ -22,7 +22,10 @@ Users can add jobs to the list by filling out a form with detailed information:
     -Comments about the jobs they want to remember
 
 <!-- Add link to index page -->
-![BHTB](....)
+![BHTB](https://github.com/TJANGEL/Bring-Home-The-Bacon/blob/master/public/img/logo.png)
+
+![BHTB](https://github.com/TJANGEL/Bring-Home-The-Bacon/blob/master/public/img/BHTB_screenshot.png)
+
 
 ## Getting Started
 
