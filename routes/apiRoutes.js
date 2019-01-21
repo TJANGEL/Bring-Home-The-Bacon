@@ -43,7 +43,7 @@ module.exports = function(app) {
       salary: req.body.salary,
       location: req.body.location,
       applied: req.body.applied,
-      pre_interview: req.body.interview,
+      pre_interview: req.body.pre_interview,
       interview: req.body.interview,
       offer: req.body.interview,
       comments: req.body.comments   
@@ -68,11 +68,11 @@ module.exports = function(app) {
 
     app.post("/api/posts", function(req, res) {
       console.log(req.body);
-      db.BaconeerInfo.create({
+      db.Baconeer.create({
         email: req.body.email,
         password: req.body.password
-      }).then(function(dbBaconeerInfo) {
-        res.json(dbBaconeerInfo);
+      }).then(function(dbBaconeer) {
+        res.json(dbBaconeer);
   
       });
   });
