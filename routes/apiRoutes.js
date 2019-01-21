@@ -26,16 +26,27 @@ module.exports = function(app) {
     });
   }); 
 
+  app.get("/api/Baconeer/", function(req, res) {
+    db.Baconeer.findAll().then(function(dbBaconeer) {
+      res.json(dbBaconeer);
+    });
+  }); 
+
   // POST route for saving a new post
   app.post("/api/posts", function(req, res) {
     console.log(req.body);
 
     db.Job.create({
       company_name: req.body.company_name,
-      job_title: req.body.job_title,
-      job_link: req.body.job_link,
       desciription: req.body.description,
-      salary: req.body.salary
+      job_link: req.body.job_link,
+      salary: req.body.salary,
+      location: req.body.location,
+      applied: req.body.applied,
+      pre_interview: req.body.interview,
+      interview: req.body.interview,
+      offer: req.body.interview,
+      comments: req.body.comments   
     }).then(function(dbJob) {
       res.json(dbJob);
     });
@@ -55,6 +66,17 @@ module.exports = function(app) {
     });
   });
 
+    app.post("/api/posts", function(req, res) {
+      console.log(req.body);
+      db.BaconeerInfo.create({
+        email: req.body.email,
+        password: req.body.password
+      }).then(function(dbBaconeerInfo) {
+        res.json(dbBaconeerInfo);
   
-}
+      });
+  });
+
+} 
+
 
