@@ -1,0 +1,3 @@
+DROP DATABASE IF EXISTS Bacon_db;
+
+CREATE DATABASE Bacon_db;

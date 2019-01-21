@@ -1,27 +1,33 @@
-var db = require("../models");
+// *********************************************************************************
+// html-routes.js - this file offers a set of routes for sending users to the various html pages
+// *********************************************************************************
 
+// Dependencies
+// =============================================================
+var path = require("path");
+
+// Routes
+// =============================================================
 module.exports = function(app) {
-  // Load index page
+  // Each of the below routes just handles the HTML page that the user gets sent to.
+
+  // index route loads index.html
   app.get("/", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
-      res.render("index", {
-        msg: "Welcome!",
-        examples: dbExamples
-      });
-    });
+    res.sendFile(path.join(__dirname, "../public/index.html"));
   });
 
-  // Load example page and pass in an example by id
-  app.get("/example/:id", function(req, res) {
-    db.Example.findOne({ where: { id: req.params.id } }).then(function(dbExample) {
-      res.render("example", {
-        example: dbExample
-      });
-    });
+  // login route loads log-in.html
+  app.get("/login", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/log-in.html"));
   });
 
-  // Render 404 page for any unmatched routes
-  app.get("*", function(req, res) {
-    res.render("404");
+  // newjob route loads addjob.html
+  app.get("/newjob", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/addjob.html"));
+  });
+
+  // jobs route loads the jobs.html
+  app.get("/jobs", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/jobs.html"));
   });
 };
