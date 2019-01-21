@@ -78,8 +78,6 @@ $(document).ready(function() {
     var newJobLink = $("<h2>");
     var newJobDescription = $("<h2>");
     var newJobSalary = $("<h5>");
-
-    newJobUser.text("Written by: " + job.User.name);
     newJobUser.css({
       float: "right",
       color: "blue",

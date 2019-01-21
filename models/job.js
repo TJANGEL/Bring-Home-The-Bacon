@@ -7,11 +7,11 @@ module.exports = function(sequelize, DataTypes) {
         len: [1, 25]
       }
     },
-    job_title: {
+    description: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        len: [1, 35]
+        len: [1, 180]
       }
     },
     job_link: {
@@ -21,18 +21,37 @@ module.exports = function(sequelize, DataTypes) {
         len: [1, 25]
       }
     },
-    description: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        len: [1, 180]
-      }
-    },
-   salary: {
-      type: DataTypes.STRING,
+    salary: {
+      type: DataTypes.INTEGER,
       allowNull: true,
       validate: {
         len: [1, 45]
+      }
+    },
+    location: {
+      type: DataTypes.STRING,
+      allowNull: true,
+      validate: {
+        len: [1, 25]
+      }
+    },
+    applied: {
+      type: DataTypes.BOOLEAN
+    },
+    pre_interview: {
+      type: DataTypes.BOOLEAN
+    },
+    interview: {
+      type: DataTypes.BOOLEAN
+    },
+    offer: {
+      type: DataTypes.BOOLEAN
+    },
+    comments: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [1, 140]
       }
     }
   });

@@ -11,7 +11,7 @@ var bcrypt = require('bcryptjs');
 var salt = bcrypt.genSaltSync(10);
 
 
-const username = req.body.username;
+
 const email = req.body.email;
 const password = req.body.password;
 
