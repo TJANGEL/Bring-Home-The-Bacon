@@ -49,14 +49,14 @@ $(document).ready(function() {
     });
   }
 
-  // InitializeRows handles appending all of our constructed job HTML inside jobContainer
+  // InitializeRows handles appending all of our constructed job HTML inside jobsContainer
   function initializeRows() {
-    jobContainer.empty();
+    jobsContainer.empty();
     var jobsToAdd = [];
     for (var i = 0; i < jobs.length; i++) {
       jobsToAdd.push(createNewRow(jobs[i]));
     }
-    jobContainer.append(jobsToAdd);
+    jobsContainer.append(jobsToAdd);
   }
 
   // This function constructs a job's HTML
@@ -127,7 +127,7 @@ $(document).ready(function() {
     if (id) {
       partial = " for User #" + id;
     }
-    jobContainer.empty();
+    jobsContainer.empty();
     var messageH2 = $("<h2>");
     messageH2.css({ "text-align": "center", "margin-top": "50px" });
     messageH2.html(
@@ -137,6 +137,6 @@ $(document).ready(function() {
         query +
         "'>here</a> in order to get started."
     );
-    jobContainer.append(messageH2);
+    jobsContainer.append(messageH2);
   }
 });
