@@ -2,18 +2,17 @@ $(document).ready(function() {
   // Getting jQuery references to the post body, title, form, and author select
   var emailInput = $("#email");
   var passwordInput = $("#password");
-  var cmsForm = $("#cms");
+  var form = $("#register");
   // Adding an event listener for when the form is submitted
-  $(cmsForm).on("submit", handleFormSubmit);
+  $(regForm).on("submit", handleFormSubmit);
   // Gets the part of the url that comes after the "?" (which we have if we're updating a post)
   // A function for handling what happens when the form to create a new post is submitted
   function handleFormSubmit(event) {
     event.preventDefault();
-    // Wont submit the post if we are missing company, description, or link
+    // Wont submit the post if we are missing emailInput, or passwordInput
     if (
-      !companyInput.val().trim() ||
-      !descriptionInput.val().trim() ||
-      !linkInput.val().trim()
+      !emailInput.val().trim() ||
+      !passwordInput.val().trim()     
     ) {
       return;
     }
