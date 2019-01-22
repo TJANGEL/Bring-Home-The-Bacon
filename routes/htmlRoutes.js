@@ -23,7 +23,7 @@ module.exports = function(app) {
 
   // newjob route loads addjob.html
   app.get("/newjob", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/addjob.html"));
+    res.sendFile(path.join(__dirname, "../public/addJob.html"));
   });
 
   // jobs route loads the jobs.html

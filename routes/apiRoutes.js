@@ -33,7 +33,7 @@ module.exports = function(app) {
   }); 
 
   // POST route for saving a new post
-  app.post("/api/posts", function(req, res) {
+  app.post("/api/Job", function(req, res) {
     console.log(req.body);
 
     db.Job.create({
@@ -53,7 +53,7 @@ module.exports = function(app) {
   });
 
   // POST route for saving a new post
-  app.post("/api/posts", function(req, res) {
+  app.post("/api/BaconeerInfo", function(req, res) {
     console.log(req.body);
     db.BaconeerInfo.create({
       email: req.body.email,
@@ -66,7 +66,7 @@ module.exports = function(app) {
     });
   });
 
-    app.post("/api/posts", function(req, res) {
+    app.post("/api/Baconeer", function(req, res) {
       console.log(req.body);
       db.Baconeer.create({
         email: req.body.email,

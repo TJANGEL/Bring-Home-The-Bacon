@@ -1,4 +1,5 @@
 require("dotenv").config();
+var express = require("express")
 var cors = require("cors");
 var bodyParser = require("body-parser");
 var session = require("express-session");
@@ -27,9 +28,9 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-var Users = require("./routes/Users.js");
+// var Users = require("./routes/Users.js");
 
-app.user("/users", Users);
+// app.user("/users", Users);
 
 // Routes
 require("./routes/apiRoutes")(app);
@@ -39,7 +40,7 @@ var syncOptions = { force: false };
 
 // If running a test, set syncOptions.force to true
 // clearing the `testdb`
-if (process.env.NODE_ENV === "test") {
+if (process.env.NODE_ENV === "development") {
   syncOptions.force = true;
 }
 

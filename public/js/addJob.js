@@ -17,11 +17,11 @@ $(document).ready(function() {
   // A function for handling what happens when the form to create a new post is submitted
   function handleFormSubmit(event) {
     event.preventDefault();
-    // Wont submit the post if we are missing a body, title, or author
+    // Wont submit the post if we are missing company, description, or link
     if (
         !companyInput.val().trim() ||
         !descriptionInput.val().trim() ||
-        !linkInput.val().trim()    
+        !linkInput.val().trim()   
              
     ) {
       return;
