@@ -60,9 +60,9 @@ $(document).ready(function() {
   }
 
   // This function constructs a job's HTML
-  function createNewRow(job) {
-    var formattedDate = new Date(Job.createdAt);
-    formattedDate = moment(formattedDate).format("MMMM Do YYYY, h:mm:ss a");
+  function createNewRow(Job) {
+    // var formattedDate = new Date(Job.createdAt);
+    // formattedDate = moment(formattedDate).format("MMMM Do YYYY, h:mm:ss a");
     var newJobCard = $("<div>");
     newJobCard.addClass("card");
     var newJobCardHeading = $("<div>");
@@ -73,34 +73,39 @@ $(document).ready(function() {
     var editBtn = $("<button>");
     editBtn.text("EDIT");
     editBtn.addClass("edit btn btn-info");
-    var newJobCompanyName = $("<h2>");
-    var newJobTitle = $("<h2>");
-    var newJobLink = $("<h2>");
-    var newJobDescription = $("<h2>");
-    var newJobSalary = $("<h5>");
-    newJobUser.css({
-      float: "right",
-      color: "blue",
-      "margin-top": "-10px"
-    });
+    var newJobCompanyName = $("<h1>");
+    var newJobLink = $("<h5>");
+    var newJobDescription = $("<h3>");
+    var newJobSalary = $("<h4>");
+    var newJobLocation = $("<h5>");
+    var newJobComments = $("<p>");
+    // newJobUser.css({
+    //   float: "right",
+    //   color: "blue",
+    //   "margin-top": "-10px"
+    // });
     var newJobCardBody = $("<div>");
     newJobCardBody.addClass("card-body");
     var newJobBody = $("<p>");
-    newJobCompanyName.text(Job.company_name);
-    newJobTitle.text(Job.job_title);
+    newJobCompanyName.text(Job.company_name); 
     newJobLink.text(Job.job_link);
-    newJobDate.text(formattedDate);
-    newJobDescription.text(Job.description);
+    // newJobDate.text(formattedDate);
+    newJobDescription.text(Job.job_description);
     newJobSalary.text(Job.salary);
-    newJobTitle.append(newJobDate);
-    newJobCardHeading.append(deleteBtn);
-    newJobCardHeading.append(editBtn);
-    newJobCardHeading.append(newJobTitle);
-    newJobCardHeading.append(newJobUser);
-    newJobCardBody.append(newJobBody);
+    newJobLocation.text(Job.location);
+    newJobComments.text(Job.comments);
+    // newJobTitle.append(newJobDate);
+    newJobCardHeading.append(newJobCompanyName);
+    // newJobCardHeading.append(editBtn);
+    newJobCardHeading.append(newJobCompanyName);
+    newJobCardBody.append(newJobDescription);
+    newJobCardBody.append(newJobLocation);
+    newJobCardBody.append(newJobSalary);
+    newJobCardBody.append(newJobLink);
+    newJobCardBody.append(newJobComments);
     newJobCard.append(newJobCardHeading);
     newJobCard.append(newJobCardBody);
-    newJobCard.data("job", job);
+    newJobCard.data("job", Job);
     return newJobCard;
   }
 

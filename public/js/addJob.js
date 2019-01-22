@@ -1,7 +1,7 @@
 $(document).ready(function() {
   // Getting jQuery references to the post body, title, form, and author select
   var companyInput = $("#companyName");
-  var descriptionInput = $("#description");
+  var jobDescriptionInput = $("#jobDescription");
   var linkInput = $("#link");
   var salaryInput = $("#salary");
   var locationInput = $("#location");
@@ -16,11 +16,11 @@ $(document).ready(function() {
   // Gets the part of the url that comes after the "?" (which we have if we're updating a post)
   // A function for handling what happens when the form to create a new post is submitted
   function handleFormSubmit(event) {
-    event.preventDefault();
+    event.preventDefault();    
     // Wont submit the post if we are missing company, description, or link
     if (
       !companyInput.val().trim() ||
-      !descriptionInput.val().trim() ||
+      !jobDescriptionInput.val().trim() ||
       !linkInput.val().trim()
     ) {
       return;
@@ -28,7 +28,7 @@ $(document).ready(function() {
     // Constructing a newJob object to hand to the database
     var newJob = {
       company_name: companyInput.val().trim(),
-      description: descriptionInput.val().trim(),
+      job_description: jobDescriptionInput.val().trim(),
       job_link: linkInput.val().trim(),
       salary: salaryInput.val().trim(),
       location: locationInput.val().trim(),
