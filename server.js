@@ -1,6 +1,5 @@
 require("dotenv").config();
-var express = require("express");
-var exphbs = require("express-handlebars");
+var express = require("express")
 var cors = require("cors");
 var bodyParser = require("body-parser");
 var session = require("express-session");
@@ -33,15 +32,6 @@ app.use(passport.session());
 
 // app.user("/users", Users);
 
-// // Handlebars
-// app.engine(
-//   "handlebars",
-//   exphbs({
-//     defaultLayout: "main"
-//   })
-// );
-app.set("view engine", "handlebars");
-
 // Routes
 require("./routes/apiRoutes")(app);
 require("./routes/htmlRoutes")(app);
@@ -50,7 +40,7 @@ var syncOptions = { force: false };
 
 // If running a test, set syncOptions.force to true
 // clearing the `testdb`
-if (process.env.NODE_ENV === "test") {
+if (process.env.NODE_ENV === "development") {
   syncOptions.force = true;
 }
 
