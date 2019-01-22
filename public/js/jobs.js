@@ -5,8 +5,8 @@ $(document).ready(function() {
   var jobsContainer = $(".job-container");
   //   var jobCategorySelect = $("#category");
   // Click events for the edit and delete buttons
-  $(document).on("click", "button.delete", handlePostDelete);
-  $(document).on("click", "button.edit", handlePostEdit);
+  $(document).on("click", "button.delete", handleJobDelete);
+  $(document).on("click", "button.edit", handleJobEdit);
   // Variable to hold our posts
   var jobs;
 
@@ -61,7 +61,7 @@ $(document).ready(function() {
 
   // This function constructs a job's HTML
   function createNewRow(job) {
-    var formattedDate = new Date(job.createdAt);
+    var formattedDate = new Date(Job.createdAt);
     formattedDate = moment(formattedDate).format("MMMM Do YYYY, h:mm:ss a");
     var newJobCard = $("<div>");
     newJobCard.addClass("card");
@@ -86,10 +86,12 @@ $(document).ready(function() {
     var newJobCardBody = $("<div>");
     newJobCardBody.addClass("card-body");
     var newJobBody = $("<p>");
-    newJobCompanyName.text(job.company_name);
-    newJobTitle.text(job.job_title);
-    newJobLink.text(job.job_link);
+    newJobCompanyName.text(Job.company_name);
+    newJobTitle.text(Job.job_title);
+    newJobLink.text(Job.job_link);
     newJobDate.text(formattedDate);
+    newJobDescription.text(Job.description);
+    newJobSalary.text(Job.salary);
     newJobTitle.append(newJobDate);
     newJobCardHeading.append(deleteBtn);
     newJobCardHeading.append(editBtn);

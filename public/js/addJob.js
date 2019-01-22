@@ -9,7 +9,7 @@ $(document).ready(function() {
   var preInterview = $("#preInterview");
   var interview = $("#interview");
   var offer = $("#offer");
-  var commentsInput = $("#comments")
+  var commentsInput = $("#comments");
   var cmsForm = $("#cms");
   // Adding an event listener for when the form is submitted
   $(cmsForm).on("submit", handleFormSubmit);
@@ -19,14 +19,13 @@ $(document).ready(function() {
     event.preventDefault();
     // Wont submit the post if we are missing company, description, or link
     if (
-        !companyInput.val().trim() ||
-        !descriptionInput.val().trim() ||
-        !linkInput.val().trim()   
-             
+      !companyInput.val().trim() ||
+      !descriptionInput.val().trim() ||
+      !linkInput.val().trim()
     ) {
       return;
     }
-    // Constructing a newPost object to hand to the database
+    // Constructing a newJob object to hand to the database
     var newJob = {
       company_name: companyInput.val().trim(),
       description: descriptionInput.val().trim(),
@@ -40,10 +39,9 @@ $(document).ready(function() {
       comments: commentsInput.val().trim()
     };
     console.log(newJob);
-    
-    // submitPost run to create a whole new post  
+
+    // submitPost run to create a whole new post
     submitPost(newJob);
-   
   }
 
   // Submits a new post and brings user to job page upon completion
@@ -52,7 +50,4 @@ $(document).ready(function() {
       window.location.href = "/jobs";
     });
   }
-
 });
-  
-
