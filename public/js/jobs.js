@@ -5,8 +5,8 @@ $(document).ready(function() {
   var jobsContainer = $(".job-container");
   //   var jobCategorySelect = $("#category");
   // Click events for the edit and delete buttons
-  $(document).on("click", "button.delete", handlePostDelete);
-  $(document).on("click", "button.edit", handlePostEdit);
+  $(document).on("click", "button.delete", handleJobDelete);
+  $(document).on("click", "button.edit", handleJobEdit);
   // Variable to hold our posts
   var jobs;
 
@@ -28,7 +28,7 @@ $(document).ready(function() {
     if (userId) {
       userId = "/?user_id=" + userId;
     }
-    $.get("/api/jobs" + userId, function(data) {
+    $.get("/api/Jobs" + userId, function(data) {
       console.log("Jobs", data);
       jobs = data;
       if (!jobs || !jobs.length) {
@@ -49,19 +49,19 @@ $(document).ready(function() {
     });
   }
 
-  // InitializeRows handles appending all of our constructed job HTML inside jobContainer
+  // InitializeRows handles appending all of our constructed job HTML inside jobsContainer
   function initializeRows() {
-    jobContainer.empty();
+    jobsContainer.empty();
     var jobsToAdd = [];
     for (var i = 0; i < jobs.length; i++) {
       jobsToAdd.push(createNewRow(jobs[i]));
     }
-    jobContainer.append(jobsToAdd);
+    jobsContainer.append(jobsToAdd);
   }
 
   // This function constructs a job's HTML
   function createNewRow(job) {
-    var formattedDate = new Date(job.createdAt);
+    var formattedDate = new Date(Job.createdAt);
     formattedDate = moment(formattedDate).format("MMMM Do YYYY, h:mm:ss a");
     var newJobCard = $("<div>");
     newJobCard.addClass("card");
@@ -86,10 +86,12 @@ $(document).ready(function() {
     var newJobCardBody = $("<div>");
     newJobCardBody.addClass("card-body");
     var newJobBody = $("<p>");
-    newJobCompanyName.text(job.company_name);
-    newJobTitle.text(job.job_title);
-    newJobLink.text(job.job_link);
+    newJobCompanyName.text(Job.company_name);
+    newJobTitle.text(Job.job_title);
+    newJobLink.text(Job.job_link);
     newJobDate.text(formattedDate);
+    newJobDescription.text(Job.description);
+    newJobSalary.text(Job.salary);
     newJobTitle.append(newJobDate);
     newJobCardHeading.append(deleteBtn);
     newJobCardHeading.append(editBtn);
@@ -127,7 +129,7 @@ $(document).ready(function() {
     if (id) {
       partial = " for User #" + id;
     }
-    jobContainer.empty();
+    jobsContainer.empty();
     var messageH2 = $("<h2>");
     messageH2.css({ "text-align": "center", "margin-top": "50px" });
     messageH2.html(
@@ -137,6 +139,6 @@ $(document).ready(function() {
         query +
         "'>here</a> in order to get started."
     );
-    jobContainer.append(messageH2);
+    jobsContainer.append(messageH2);
   }
 });

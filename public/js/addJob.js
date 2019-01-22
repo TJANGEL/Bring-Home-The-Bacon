@@ -9,7 +9,7 @@ $(document).ready(function() {
   var preInterview = $("#preInterview");
   var interview = $("#interview");
   var offer = $("#offer");
-  var commentsInput = $("#comments")
+  var commentsInput = $("#comments");
   var cmsForm = $("#cms");
   // Adding an event listener for when the form is submitted
   $(cmsForm).on("submit", handleFormSubmit);
@@ -17,18 +17,17 @@ $(document).ready(function() {
   // A function for handling what happens when the form to create a new post is submitted
   function handleFormSubmit(event) {
     event.preventDefault();
-    // Wont submit the post if we are missing a body, title, or author
+    // Wont submit the post if we are missing company, description, or link
     if (
-        !companyInput.val().trim() ||
-        !descriptionInput.val().trim() ||
-        !linkInput.val().trim()    
-             
+      !companyInput.val().trim() ||
+      !descriptionInput.val().trim() ||
+      !linkInput.val().trim()
     ) {
       return;
     }
-    // Constructing a newPost object to hand to the database
-    var newPost = {
-      campny_name: companyInput.val().trim(),
+    // Constructing a newJob object to hand to the database
+    var newJob = {
+      company_name: companyInput.val().trim(),
       description: descriptionInput.val().trim(),
       job_link: linkInput.val().trim(),
       salary: salaryInput.val().trim(),
@@ -39,20 +38,16 @@ $(document).ready(function() {
       offer: offer.val(),
       comments: commentsInput.val().trim()
     };
+    console.log(newJob);
 
-    
-    // submitPost run to create a whole new post  
-    submitPost(newPost);
-   
+    // submitPost run to create a whole new post
+    submitPost(newJob);
   }
 
-  // Submits a new post and brings user to blog page upon completion
+  // Submits a new post and brings user to job page upon completion
   function submitPost(post) {
-    $.post("/api/posts", post, function() {
+    $.post("/api/Jobs", post, function() {
       window.location.href = "/jobs";
     });
   }
-
 });
-  
-

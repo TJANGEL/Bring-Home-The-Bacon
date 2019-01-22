@@ -21,29 +21,3 @@ module.exports = function(sequelize, DataTypes) {
 
   return Baconeer;
 };
-
-// var email = req.body.email;
-// var password = req.body.password;
-
-// bcrypt.hash(password, saltRounds, function(err, hash) {
-//   db.query("INSERT INTO baconeer(email, password)VALUES (?, ?)"),
-//     [email, password],
-//     function(error, results, fields) {
-//       if (error) throw error;
-
-//       db.query("SELECT LAST_INSERT_ID() as user_id", function(
-//         error,
-//         results,
-//         fields
-//       ) {
-//         if (error) throw error;
-
-//         const user_id = results[0];
-
-//         console.log(results[0]);
-//         req.login(user_id, function(err) {
-//           res.redirect("/");
-//         });
-//       });
-//     };
-// });

@@ -28,33 +28,20 @@ module.exports = function(app) {
       res.json(dbBaconeerInfo);
     });
   });
-      
-  // Get route for returning posts of a specific category
-  app.get("/api/posts/category/:category", function(req, res) {
-    db.Post.findAll({
-      where: {
-        category: req.params.category
-      }
-    }).then(function(dbPost) {
-      res.json(dbPost);
-    });
-  });
 
-  // Get route for retrieving a single post
-  app.get("/api/posts/:id", function(req, res) {
-    db.Post.findOne({
-      where: {
-        id: req.params.id
-      }
-    }).then(function(dbPost) {
-      res.json(dbPost);
+// GET route for email and password
+  app.get("/public/registration", function(req, res) {
+    db.Baconeer.findAll().then(function(dbBaconeer) {
+      res.json(dbBaconeer);
     });
-  });
+  });      
+  
 
-  // POST route for saving a new post
+  // POST route for saving a new Baconeer
   app.post('/public/registration', function (req, res) {
     bcrypt.hash(req.body.password, saltRounds, function (err,   hash) {
-   db.User.create({
+   db.Baconeer.create({
+
      email: req.body.email,
      password: hash
      }).then(function(data) {
@@ -66,7 +53,8 @@ module.exports = function(app) {
   });
 
   app.post('/log-in', function (req, res) {
-    db.User.findOne({
+    db.Baconeer.findOne({
+
          where: {
              email: req.body.email
                 }
@@ -78,7 +66,8 @@ bcrypt.compare(req.body.password, user.password, function (err, result) {
        if (result == true) {
            res.redirect('/log-in');
        } else {
-        res.send('Incorrect password');
+        res.send('Incorrect username or password');
+
         res.redirect('/');
        }
      });
@@ -86,23 +75,28 @@ bcrypt.compare(req.body.password, user.password, function (err, result) {
  });
 });
 
-
-  app.post("/api/posts", function(req, res) {
+// route for saving new job
+  app.post("/api/Jobs", function(req, res) {
     console.log(req.body);
 
     db.Job.create({
       company_name: req.body.company_name,
       job_title: req.body.job_title,
       job_link: req.body.job_link,
-      desciription: req.body.description,
-      salary: req.body.salary
+      salary: req.body.salary,
+      location: req.body.location,
+      applied: req.body.applied,
+      pre_interview: req.body.pre_interview,
+      interview: req.body.interview,
+      offer: req.body.offer,
+      comments: req.body.comments      
     }).then(function(dbJob) {
       res.json(dbJob);
     });
   });
 
   // POST route for saving a new post
-  app.post("/api/posts", function(req, res) {
+  app.post("/api/BaconeerInfo", function(req, res) {
     console.log(req.body);
     db.BaconeerInfo.create({
       email: req.body.email,
@@ -115,14 +109,16 @@ bcrypt.compare(req.body.password, user.password, function (err, result) {
     });
   });
 
-  // PUT route for updating posts
-  app.put("/api/posts", function(req, res) {
-    db.Post.update(req.body, {
-      where: {
-        id: req.body.id
-      }
-    }).then(function(dbPost) {
-      res.json(dbPost);
-    });
+
+    app.post("/api/Baconeer", function(req, res) {
+      console.log(req.body);
+      db.Baconeer.create({
+        email: req.body.email,
+        password: req.body.password
+      }).then(function(dbBaconeer) {
+        res.json(dbBaconeer);
+  
+      });
+
   });
 };
