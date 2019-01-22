@@ -2,7 +2,7 @@ $(document).ready(function() {
   // Getting jQuery references to the post body, title, form, and author select
   var emailInput = $("#email");
   var passwordInput = $("#password");
-  var form = $("#register");
+  var regForm = $("#register");
   // Adding an event listener for when the form is submitted
   $(regForm).on("submit", handleFormSubmit);
   // Gets the part of the url that comes after the "?" (which we have if we're updating a post)
