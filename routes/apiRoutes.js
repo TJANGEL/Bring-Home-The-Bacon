@@ -7,13 +7,16 @@
 
 // Requiring models
 var db = require("../models");
+var bcrypt = require("bcrypt");
+var salt = bcrypt.genSaltSync(10);
+
 
 // Routes
 // =============================================================
 module.exports = function(app) {
 
   // GET route for getting all of the job posts
-  app.get("/api/Job/", function(req, res) {
+  app.get("/api/Jobs/", function(req, res) {
     db.Job.findAll().then(function(dbJob) {
       res.json(dbJob);
     });
@@ -24,16 +27,52 @@ module.exports = function(app) {
     db.BaconeerInfo.findAll().then(function(dbBaconeerInfo) {
       res.json(dbBaconeerInfo);
     });
-  }); 
-
-  app.get("/api/Baconeer/", function(req, res) {
+  });
+// GET route for email and password
+  app.get("/public/registration", function(req, res) {
     db.Baconeer.findAll().then(function(dbBaconeer) {
       res.json(dbBaconeer);
     });
-  }); 
+  });      
+  
 
-  // POST route for saving a new post
-  app.post("/api/Job", function(req, res) {
+  // POST route for saving a new Baconeer
+  app.post('/public/registration', function (req, res) {
+    bcrypt.hash(req.body.password, saltRounds, function (err,   hash) {
+   db.Baconeer.create({
+     email: req.body.email,
+     password: hash
+     }).then(function(data) {
+      if (data) {
+      res.redirect('/registration');
+      }
+    });
+   });
+  });
+
+  app.post('/log-in', function (req, res) {
+    db.Baconeer.findOne({
+         where: {
+             email: req.body.email
+                }
+    }).then(function (user) {
+        if (!user) {
+           res.redirect('/log-in');
+        } else {
+bcrypt.compare(req.body.password, user.password, function (err, result) {
+       if (result == true) {
+           res.redirect('/log-in');
+       } else {
+        res.send('Incorrect username or password');
+        res.redirect('/');
+       }
+     });
+    }
+ });
+});
+
+// route for saving new job
+  app.post("/api/Jobs", function(req, res) {
     console.log(req.body);
 
     db.Job.create({
@@ -45,8 +84,8 @@ module.exports = function(app) {
       applied: req.body.applied,
       pre_interview: req.body.pre_interview,
       interview: req.body.interview,
-      offer: req.body.interview,
-      comments: req.body.comments   
+      offer: req.body.offer,
+      comments: req.body.comments      
     }).then(function(dbJob) {
       res.json(dbJob);
     });
@@ -76,7 +115,4 @@ module.exports = function(app) {
   
       });
   });
-
-} 
-
-
+};

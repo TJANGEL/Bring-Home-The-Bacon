@@ -27,8 +27,8 @@ $(document).ready(function() {
       return;
     }
     // Constructing a newPost object to hand to the database
-    var newPost = {
-      campny_name: companyInput.val().trim(),
+    var newJob = {
+      company_name: companyInput.val().trim(),
       description: descriptionInput.val().trim(),
       job_link: linkInput.val().trim(),
       salary: salaryInput.val().trim(),
@@ -39,16 +39,16 @@ $(document).ready(function() {
       offer: offer.val(),
       comments: commentsInput.val().trim()
     };
-
+    console.log(newJob);
     
     // submitPost run to create a whole new post  
-    submitPost(newPost);
+    submitPost(newJob);
    
   }
 
-  // Submits a new post and brings user to blog page upon completion
+  // Submits a new post and brings user to job page upon completion
   function submitPost(post) {
-    $.post("/api/posts", post, function() {
+    $.post("/api/Jobs", post, function() {
       window.location.href = "/jobs";
     });
   }

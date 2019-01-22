@@ -1,6 +1,9 @@
+// var bcrypt = require("bcrypt");
+// var db = {};
+
 module.exports = function(sequelize, DataTypes) {
   var Baconeer = sequelize.define("Baconeer", {
-  email: {
+    email: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
@@ -16,7 +19,6 @@ module.exports = function(sequelize, DataTypes) {
     }
   });
 
-  
-
   return Baconeer;
 };
+

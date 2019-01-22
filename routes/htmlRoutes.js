@@ -30,4 +30,8 @@ module.exports = function(app) {
   app.get("/jobs", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/jobs.html"));
   });
+ // register route loads the registration.html
+  app.get("/register", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/registration.html"));
+  });
 };

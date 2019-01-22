@@ -30,13 +30,5 @@ module.exports = function(sequelize, DataTypes) {
     }
   });
 
-  // Baconeer.associate = function(models) {
-  //   // Associating Author with Posts
-  //   // When an Author is deleted, also delete any associated Posts
-  //   Baconeer.hasMany(models.Post, {
-  //     onDelete: "cascade"
-  //   });
-  // };
-
   return BaconeerInfo;
 };

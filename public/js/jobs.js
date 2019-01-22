@@ -28,7 +28,7 @@ $(document).ready(function() {
     if (userId) {
       userId = "/?user_id=" + userId;
     }
-    $.get("/api/jobs" + userId, function(data) {
+    $.get("/api/Jobs" + userId, function(data) {
       console.log("Jobs", data);
       jobs = data;
       if (!jobs || !jobs.length) {

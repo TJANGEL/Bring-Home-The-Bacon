@@ -4,7 +4,7 @@ var cors = require("cors");
 var bodyParser = require("body-parser");
 var session = require("express-session");
 var passport = require("passport");
-var MySQLStore = require('express-mysql-session')(session);
+// var MySQLStore = require('express-mysql-session')(session);
 var db = require("./models");
 
 var app = express();
