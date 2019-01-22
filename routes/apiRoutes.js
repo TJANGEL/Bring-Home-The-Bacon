@@ -28,6 +28,7 @@ module.exports = function(app) {
       res.json(dbBaconeerInfo);
     });
   });
+
 // GET route for email and password
   app.get("/public/registration", function(req, res) {
     db.Baconeer.findAll().then(function(dbBaconeer) {
@@ -40,6 +41,7 @@ module.exports = function(app) {
   app.post('/public/registration', function (req, res) {
     bcrypt.hash(req.body.password, saltRounds, function (err,   hash) {
    db.Baconeer.create({
+
      email: req.body.email,
      password: hash
      }).then(function(data) {
@@ -52,6 +54,7 @@ module.exports = function(app) {
 
   app.post('/log-in', function (req, res) {
     db.Baconeer.findOne({
+
          where: {
              email: req.body.email
                 }
@@ -64,6 +67,7 @@ bcrypt.compare(req.body.password, user.password, function (err, result) {
            res.redirect('/log-in');
        } else {
         res.send('Incorrect username or password');
+
         res.redirect('/');
        }
      });
@@ -77,7 +81,7 @@ bcrypt.compare(req.body.password, user.password, function (err, result) {
 
     db.Job.create({
       company_name: req.body.company_name,
-      desciription: req.body.description,
+      job_title: req.body.job_title,
       job_link: req.body.job_link,
       salary: req.body.salary,
       location: req.body.location,
@@ -105,6 +109,7 @@ bcrypt.compare(req.body.password, user.password, function (err, result) {
     });
   });
 
+
     app.post("/api/Baconeer", function(req, res) {
       console.log(req.body);
       db.Baconeer.create({
@@ -114,5 +119,6 @@ bcrypt.compare(req.body.password, user.password, function (err, result) {
         res.json(dbBaconeer);
   
       });
+
   });
 };

@@ -10,7 +10,6 @@ var db = {};
 var bcrypt = require('bcrypt');
 var salt = bcrypt.genSaltSync(10);
 
-
 if (config.use_env_variable) {
   var sequelize = new Sequelize(process.env[config.use_env_variable]);
 } else {
