@@ -81,7 +81,7 @@ bcrypt.compare(req.body.password, user.password, function (err, result) {
 
     db.Job.create({
       company_name: req.body.company_name,
-      job_title: req.body.job_title,
+      job_description: req.body.job_description,
       job_link: req.body.job_link,
       salary: req.body.salary,
       location: req.body.location,

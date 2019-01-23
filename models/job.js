@@ -7,7 +7,7 @@ module.exports = function(sequelize, DataTypes) {
         len: [1, 25]
       }
     },
-    description: {
+    job_description: {
       type: DataTypes.STRING,
       allowNull: true,
       validate: {
