@@ -79,15 +79,10 @@ $(document).ready(function() {
     var newJobSalary = $("<h4>");
     var newJobLocation = $("<h5>");
     var newJobComments = $("<p>");
-    // newJobUser.css({
-    //   float: "right",
-    //   color: "blue",
-    //   "margin-top": "-10px"
-    // });
     var newJobCardBody = $("<div>");
     newJobCardBody.addClass("card-body");
     var newJobBody = $("<p>");
-    newJobCompanyName.text(Job.company_name); 
+    newJobCompanyName.text(Job.company_name);
     newJobLink.text(Job.job_link);
     // newJobDate.text(formattedDate);
     newJobDescription.text(Job.job_description);
