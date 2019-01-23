@@ -10,10 +10,7 @@ $(document).ready(function() {
   function handleFormSubmit(event) {
     event.preventDefault();
     // Wont submit the post if we are missing emailInput, or passwordInput
-    if (
-      !emailInput.val().trim() ||
-      !passwordInput.val().trim()     
-    ) {
+    if (!emailInput.val().trim() || !passwordInput.val().trim()) {
       return;
     }
     // Constructing a newPost object to hand to the database
