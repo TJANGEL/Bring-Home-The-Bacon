@@ -21,13 +21,15 @@
       integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
       crossorigin="anonymous"
     />
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery.js"></script>
 
     <!-- CSS file -->
     <link rel="stylesheet" href="styles/style.css" />
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-primary bg-dark">
-      <a class="navbar-brand" href="/"><img src="img/logo.png"/></a>
+      <a class="navbar-brand" href="./index.html"><img src="img/logo.png"/></a>
       <button
         class="navbar-toggler"
         type="button"
@@ -42,16 +44,16 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" href="/register">Register</a>
-          </li>
-          <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
-          <li class="nav-item active">
-            <a class="nav-link" href="/newjob"
-              >New Job Entry <span class="sr-only">(current)</span></a
-            >
+            <a class="nav-link" href="./registration.html">Register</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/jobs">Jobs List</a>
+            <a class="nav-link" href="./log-in.html">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./addJob.html">New Job Entry</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./jobs.html">Jobs List</a>
           </li>
         </ul>
       </div>
@@ -74,6 +76,7 @@
             <label for="description">Job Description:</label>
             <textarea
               placeholder="Entry Level, 25 years experience"
+              type="text"
               class="form-control"
               rows="7"
               id="description"
@@ -106,36 +109,32 @@
             <div class="form-group">
               <label for="sel1">Applied:</label>
               <select class="form-control" id="applied">
-                <option>No Answer</option>
-                <option>YES</option>
-                <option>NO</option>
+                <option value="true" selected="selected">YES</option>
+                <option value="false">NO</option>
               </select>
             </div>
             <br />
             <div class="form-group">
               <label for="sel1">Scheduled Interview:</label>
               <select class="form-control" id="preInterview">
-                <option>No Answer</option>
-                <option>YES</option>
-                <option>NO</option>
+                <option value="true">YES</option>
+                <option value="false" selected="selected">NO</option>
               </select>
             </div>
             <br />
             <div class="form-group">
               <label for="sel1">Interviewed:</label>
               <select class="form-control" id="interview">
-                <option>No Answer</option>
-                <option>YES</option>
-                <option>NO</option>
+                <option value="true">YES</option>
+                <option value="false" selected="selected">NO</option>
               </select>
             </div>
             <br />
             <div class="form-group">
               <label for="sel1">Offer Received:</label>
               <select class="form-control" id="offer">
-                <option>No Answer</option>
-                <option>YES</option>
-                <option>NO</option>
+                <option value="true">YES</option>
+                <option value="false" selected="selected">NO</option>
               </select>
             </div>
             <br />
@@ -161,5 +160,6 @@
     <!-- JavaScript Libraries -->
     <script src="lib/jquery/jquery.min.js"></script>
     <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/addJob.js"></script>
   </body>
 </html>
