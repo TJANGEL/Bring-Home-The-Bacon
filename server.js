@@ -1,5 +1,5 @@
 require("dotenv").config();
-var express = require("express")
+var express = require("express");
 var cors = require("cors");
 var bodyParser = require("body-parser");
 var session = require("express-session");
@@ -40,7 +40,7 @@ var syncOptions = { force: false };
 
 // If running a test, set syncOptions.force to true
 // clearing the `testdb`
-if (process.env.NODE_ENV === "development") {
+if (process.env.NODE_ENV === "production") {
   syncOptions.force = true;
 }
 
