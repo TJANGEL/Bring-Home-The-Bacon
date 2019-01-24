@@ -1,5 +1,5 @@
 require("dotenv").config();
-var express = require("express")
+var express = require("express");
 var cors = require("cors");
 var bodyParser = require("body-parser");
 var session = require("express-session");
@@ -33,8 +33,9 @@ app.use(passport.session());
 // app.user("/users", Users);
 
 // Routes
-require("./routes/apiRoutes")(app);
-require("./routes/htmlRoutes")(app);
+require("./routes/html-routes.js")(app);
+require("./routes/author-api-routes.js")(app);
+require("./routes/post-api-routes.js")(app);
 
 var syncOptions = { force: false };
 
