@@ -46,8 +46,8 @@ $(document).ready(function() {
     // Constructing a newPost object to hand to the database
     var newPost = {
       title: titleInput.val().trim(),
-      description: descriptionInput.val().trim(),
-      link: linkInput.val().trim(),
+      jobDescription: descriptionInput.val().trim(),
+      jobLink: linkInput.val().trim(),
       salary: salaryInput.val().trim(),
       location: locationInput.val().trim(),
       comments: commentsInput.val().trim(),
@@ -89,9 +89,9 @@ $(document).ready(function() {
         console.log(data.AuthorId || data.id);
         // If this post exists, prefill our cms forms with its data
         titleInput.val(data.title);
-        descriptionInput.val(data.description);
+        descriptionInput.val(data.jobDescription);
         // bodyInput.val(data.body);
-        linkInput.val(data.Link);
+        linkInput.val(data.jobLink);
         salaryInput.val(data.salary);
         locationInput.val(data.location);
         commentInput.val(data.comments);
