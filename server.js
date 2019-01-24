@@ -33,14 +33,15 @@ app.use(passport.session());
 // app.user("/users", Users);
 
 // Routes
-require("./routes/apiRoutes")(app);
-require("./routes/htmlRoutes")(app);
+require("./routes/html-routes.js")(app);
+require("./routes/author-api-routes.js")(app);
+require("./routes/post-api-routes.js")(app);
 
 var syncOptions = { force: false };
 
 // If running a test, set syncOptions.force to true
 // clearing the `testdb`
-if (process.env.NODE_ENV === "production") {
+if (process.env.NODE_ENV === "development") {
   syncOptions.force = true;
 }
 

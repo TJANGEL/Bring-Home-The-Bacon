@@ -1,3 +1,48 @@
+form#cms {
+  margin-top: 50px;
+}
+
+#cms textarea {
+  resize: none;
+}
+
+.card-header button.delete,
+button.edit {
+  float: right;
+  margin-bottom: 5px;
+  margin-right: 5px;
+}
+
+.author-container {
+  margin-top: 50px;
+}
+
+.author-list {
+  margin-top: 25px;
+}
+
+.blog-container {
+  margin: 30px 30px;
+}
+
+.blog {
+  margin-top: 30px;
+}
+
+.hidden {
+  display: none;
+}
+
+#author-name {
+  width: 100%;
+  height: 35px;
+  margin-top: 5px;
+}
+
+.top-30 {
+  margin-top: 30px;
+}
+
 body {
   background-color: #f2f2f2;
   font-family: "EB Garamond", serif;
@@ -207,6 +252,14 @@ label {
 }
 
 /* job list */
+
+.author-container {
+  margin-bottom: 260px;
+}
+
+.blog-container {
+  margin-bottom: 580px;
+}
 
 .job-container {
   margin-bottom: 530px;
