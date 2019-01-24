@@ -2,7 +2,7 @@ $(document).ready(function() {
   // Getting jQuery references to the post body, title, form, and author select
   var emailInput = $("#email");
   var passwordInput = $("#password");
-  var regForm = $("#register");
+  var regForm = $("#regForm");
   // Adding an event listener for when the form is submitted
   $(regForm).on("submit", handleFormSubmit);
   // Gets the part of the url that comes after the "?" (which we have if we're updating a post)
@@ -26,7 +26,7 @@ $(document).ready(function() {
 
   // Submits a new post and brings user to job page upon completion
   function submitPost(post) {
-    $.post("/public/registration", post, function() {
+    $.post("/api/Baconeer", post, function() {
       window.location.href = "/login";
     });
   }
