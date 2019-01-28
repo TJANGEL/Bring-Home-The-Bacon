@@ -13,7 +13,7 @@ module.exports = function(app) {
 
   // index route loads view.html
   app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/blog.html"));
+    res.sendFile(path.join(__dirname, "../public/index.html"));
   });
 
   // cms route loads cms.html
@@ -29,5 +29,15 @@ module.exports = function(app) {
   // authors route loads author-manager.html
   app.get("/authors", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/author-manager.html"));
+  });
+
+  // login route loads log-in.html
+  app.get("/login", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/log-in.html"));
+  });
+
+  // register route loads the registration.html
+  app.get("/register", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/registration.html"));
   });
 };

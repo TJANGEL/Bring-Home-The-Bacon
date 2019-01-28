@@ -7,11 +7,6 @@ module.exports = function(sequelize, DataTypes) {
         len: [1]
       }
     },
-    // body: {
-    //   type: DataTypes.TEXT,
-    //   allowNull: false,
-    //   len: [1]
-    // },
     jobDescription: {
       type: DataTypes.STRING,
       allowNull: true,
