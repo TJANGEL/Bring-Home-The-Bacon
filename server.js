@@ -36,6 +36,7 @@ app.use(passport.session());
 require("./routes/html-routes.js")(app);
 require("./routes/author-api-routes.js")(app);
 require("./routes/post-api-routes.js")(app);
+require("./routes/api-routes.js")(app);
 
 var syncOptions = { force: false };
 

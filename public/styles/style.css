@@ -280,3 +280,8 @@ label {
 #offered {
   background: brown;
 }
+
+#welcome-message {
+  text-align: center;
+  padding: 20px;
+}
